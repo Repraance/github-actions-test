@@ -23,3 +23,9 @@ jobs:
       - run: echo "log NORMAL_BOOL calc ${{ env.NORMAL_BOOL || 2 }}"
       - run: echo "log EXP_NUMBER ${{ env.EXP_NUMBER }}"
       - run: echo "log EXP_NUMBER calc 2 ${{ env.EXP_NUMBER_0 || 2 }}"
+      - run: echo "log null ${{ null }}"
+      - run: echo "log null calc ${{ null || 2 }}"
+      - run: echo "log null calc2 ${{ env.EXP_NULL || 2 }}"
+      - run: echo "log UNEXISTED ${{ env.UNEXISTED }}"
+      - run: echo "log UNEXISTED calc ${{ env.UNEXISTED || 4 }}"
+
