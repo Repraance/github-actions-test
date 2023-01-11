@@ -16,8 +16,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: test
+      - name: test NORMAL_NULL
         if: ${{ env.NORMAL_NULL == null }}
+        run: echo "true"
+      - name: test EXP_NULL
+        if: ${{ env.EXP_NULL == null }}
         run: echo "true"
       - name: test2
         if: ${{ env.NORMAL_BOOL == 'false' }}
