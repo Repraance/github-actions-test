@@ -34,5 +34,5 @@ jobs:
       - run: echo "log '' || 9 ${{ '' || 9 }}"
       - run: echo "log false || 9 ${{ false || 9 }}"
       - run: echo "log null || 9 ${{ null || 9 }}"
-
+      - run: echo "log bool vs str || 9 ${{ false || '9' }}"
 
