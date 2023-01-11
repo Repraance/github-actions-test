@@ -5,6 +5,7 @@ env:
   NORMAL_STRING: normalString
   NORMAL_NUMBER: 8
   NORMAL_NUMBER_0: 0
+  NORMAL_NULL: null
   NORMAL_BOOL: false
   EXP_STR: ${{ 'str' }}
   EXP_NUMBER: ${{ 8 }}
@@ -16,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-        if: ${{ env.NORMAL_BOOL == false }}
+        if: ${{ env.NORMAL_NULL == null }}
         run: echo "true"
       - name: test2
         if: ${{ env.NORMAL_BOOL == 'false' }}
