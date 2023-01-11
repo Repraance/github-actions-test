@@ -4,7 +4,13 @@ on: push
 env:
   NORMAL_STRING: normalString
   NORMAL_NUMBER: 8
+  NORMAL_NUMBER_0: 0
   NORMAL_BOOL: false
+  EXP_STR: ${{ str }}
+  EXP_NUMBER: ${{ 8 }}
+  EXP_NUMBER_0: ${{ 0 }}
+  EXP_BOOL: ${{ false }}
+  EXP_NULL: ${{ null }}
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -12,7 +18,8 @@ jobs:
       - run: echo "log env ${{ env }}"
       - run: echo "log NORMAL_STRING ${{ env.NORMAL_STRING }}"
       - run: echo "log NORMAL_NUMBER ${{ env.NORMAL_NUMBER }}"
-      - run: echo "log NORMAL_NUMBER calc ${{ env.NORMAL_NUMBER - 2 }}"
+      - run: echo "log NORMAL_NUMBER calc ${{ env.NORMAL_NUMBER_0 || 9 }}"
       - run: echo "log NORMAL_BOOL ${{ env.NORMAL_BOOL }}"
       - run: echo "log NORMAL_BOOL calc ${{ env.NORMAL_BOOL || 2 }}"
-
+      - run: echo "log EXP_NUMBER ${{ env.EXP_NUMBER }}"
+      - run: echo "log EXP_NUMBER calc 2 ${{ env.EXP_NUMBER_0 || 2 }}"
