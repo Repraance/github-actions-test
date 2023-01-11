@@ -16,6 +16,21 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: test null == 0
+        if: ${{ null == 0 }}
+        run: echo "true"
+      - name: test null == false
+        if: ${{ null == false }}
+        run: echo "true"
+      - name: test null == ''
+        if: ${{ null == '' }}
+        run: echo "true"
+      - name: test 0 == false
+        if: ${{ 0 == false }}
+        run: echo "true"
+      - name: test 0 == ''
+        if: ${{ 0 == '' }}
+        run: echo "true"
       - name: test NORMAL_NULL
         if: ${{ env.NORMAL_NULL == null }}
         run: echo "true"
