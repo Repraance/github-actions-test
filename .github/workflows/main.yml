@@ -15,7 +15,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "log calc $((1 + 2))"
+      - run: echo "log ${{ toJSON('[1,2]') }}"
       - run: echo "log NORMAL_STRING ${{ env.NORMAL_STRING }}"
       - run: echo "log NORMAL_NUMBER ${{ env.NORMAL_NUMBER }}"
       - run: echo "log NORMAL_NUMBER calc ${{ env.NORMAL_NUMBER_0 || 9 }}"
@@ -35,4 +35,5 @@ jobs:
       - run: echo "log false || 9 ${{ false || 'asdsadsa' }}"
       - run: echo "log null || 9 ${{ null || 9 }}"
       - run: echo "log bool vs str || 9 ${{ false && '9' }}"
+
 
