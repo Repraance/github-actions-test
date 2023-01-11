@@ -16,6 +16,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: test (null == 0) == true
+        if: ${{ (null == 0) == true }}
+        run: echo "true"
       - name: test null == 0
         if: ${{ null == 0 }}
         run: echo "true"
