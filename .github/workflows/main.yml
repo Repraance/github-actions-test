@@ -41,7 +41,7 @@ jobs:
       - run: echo "log UNEXISTED ${{ env.UNEXISTED }}"
       - run: echo "log UNEXISTED calc ${{ env.UNEXISTED || 4 }}"
       - run: echo "log 0 || 9 ${{ 0 || 9 }}"
-      - run: echo "log '' || 9 ${{ '' || 9 }}"
+      - run: echo "--------- ${{ 0 || 'asdsad' }}"
       - run: echo "log false || 9 ${{ false || 'asdsadsa' }}"
       - run: echo "log null || 9 ${{ null || 9 }}"
       - run: echo "log bool vs str || 9 ${{ false && '9' }}"
