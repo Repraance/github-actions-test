@@ -12,10 +12,17 @@ env:
   EXP_NUMBER_0: ${{ 0 }}
   EXP_BOOL: ${{ false }}
   EXP_NULL: ${{ null }}
+  EXP_J: ${{ null == 0 }}
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: test env.EXP_J == true 
+        if: ${{ env.EXP_J == true }}
+        run: echo "true"
+      - name: test env.EXP_J == 'true' 
+        if: ${{ env.EXP_J == 'true' }}
+        run: echo "true"
       - name: test (null == 0) == true
         if: ${{ (null == 0) == true }}
         run: echo "true"
