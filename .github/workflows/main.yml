@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test
-        if: ${{ NORMAL_BOOL == false }}
+        if: ${{ env.NORMAL_BOOL == false }}
         run: echo "true"
       - run: echo "log ${{ env.unexisted || false }}"
       - run: echo "log NORMAL_STRING ${{ env.NORMAL_STRING }}"
