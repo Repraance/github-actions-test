@@ -15,7 +15,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "log calc ${{ 1 + 2 }}"
+      - run: echo "log calc $((1 + 2))"
       - run: echo "log NORMAL_STRING ${{ env.NORMAL_STRING }}"
       - run: echo "log NORMAL_NUMBER ${{ env.NORMAL_NUMBER }}"
       - run: echo "log NORMAL_NUMBER calc ${{ env.NORMAL_NUMBER_0 || 9 }}"
