@@ -31,8 +31,11 @@ jobs:
       - name: test2
         if: ${{ env.NORMAL_BOOL == 'false' }}
         run: echo "true"
-      - name: test3
-        if: ${{ env.EXP_BOOL == false }}
+      - name: EXP_BOOL false 0
+        if: ${{ env.EXP_BOOL == 0 }}
+        run: echo "true"
+      - name: EXP_BOOL false str
+        if: ${{ env.EXP_BOOL == 'false' }}
         run: echo "true"
       - run: echo "log ${{ env.unexisted || false }}"
       - run: echo "log NORMAL_STRING ${{ env.NORMAL_STRING }}"
