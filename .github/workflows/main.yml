@@ -6,7 +6,7 @@ env:
   NORMAL_NUMBER: 8
   NORMAL_NUMBER_0: 0
   NORMAL_BOOL: false
-  EXP_STR: ${{ str }}
+  EXP_STR: ${{ 'str' }}
   EXP_NUMBER: ${{ 8 }}
   EXP_NUMBER_0: ${{ 0 }}
   EXP_BOOL: ${{ false }}
