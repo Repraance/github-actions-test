@@ -25,6 +25,9 @@ jobs:
       - name: test EXP_NULL empty
         if: ${{ env.EXP_NULL == '' }}
         run: echo "true"
+      - name: test EXP_NULL empty
+        if: ${{ env.EXP_NULL == 0 }}
+        run: echo "true"
       - name: test2
         if: ${{ env.NORMAL_BOOL == 'false' }}
         run: echo "true"
