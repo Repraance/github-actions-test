@@ -1,8 +1,18 @@
 name: test
 on: push
 
+env:
+  NORMAL_STRING: normalString
+  NORMAL_NUMBER: 8
+  NORMAL_BOOL: false
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - run: echo "log env ${{ env }}"
+      - run: echo "log NORMAL_STRING ${{ env.NORMAL_STRING }}"
+      - run: echo "log NORMAL_NUMBER ${{ env.NORMAL_NUMBER }}"
+      - run: echo "log NORMAL_NUMBER calc ${{ env.NORMAL_NUMBER - 2 }}"
+      - run: echo "log NORMAL_BOOL ${{ env.NORMAL_BOOL }}"
+      - run: echo "log NORMAL_BOOL calc ${{ env.NORMAL_BOOL || 2 }}"
+
