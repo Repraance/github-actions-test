@@ -59,6 +59,9 @@ jobs:
       - name: EXP_BOOL false 0
         if: ${{ env.EXP_BOOL == 0 }}
         run: echo "true"
+      - name: EXP_BOOL false bool
+        if: ${{ env.EXP_BOOL == false }}
+        run: echo "true"
       - name: EXP_BOOL false str
         if: ${{ env.EXP_BOOL == 'false' }}
         run: echo "true"
