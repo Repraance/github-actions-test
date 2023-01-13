@@ -1,5 +1,5 @@
-name: test
-on: push
+name: ${{ 'test' }}22
+on: ${{ 'pu' }}${{ 'sh' }}
 
 env:
   NORMAL_STRING: normalString
@@ -15,7 +15,7 @@ env:
   EXP_J: ${{ null == 0 }}
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ 'ubuntu-latest' }}
     steps:
       - name: test env.EXP_J == true 
         if: ${{ env.EXP_J == true }}
