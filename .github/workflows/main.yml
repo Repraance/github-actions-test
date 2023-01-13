@@ -1,5 +1,5 @@
 name: ${{ 'test' }}22
-on: ${{ 'pu' }}${{ 'sh' }}
+on: push
 
 env:
   NORMAL_STRING: normalString
